@@ -1,0 +1,26 @@
+[package]
+name = "getaoo"
+version = "1.0.0"
+edition = "2021"
+authors = ["Lior kesos <lior@linnovate.net>>"]
+description = "A CLI tool with Zarf integration"
+license = "MIT"
+repository = "https://github.com/liorkesos/getapp"
+
+[dependencies]
+clap = { version = "4.4", features = ["derive"] }
+
+# Optional: Add these for better error handling and logging
+# anyhow = "1.0"
+# env_logger = "0.10"
+# log = "0.4"
+
+[[bin]]
+name = "getapp"
+path = "src/main.rs"
+
+[profile.release]
+strip = true
+lto = true
+codegen-units = 1
+panic = "abort"
